@@ -1,15 +1,13 @@
-import numpy as np
-
-diagonals = []
-test = np.array(([1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]))
-rows, columns = test.shape
-for column in range(columns):
-    diagonal = ""
-    row = 0
-    while row < rows and column < columns:
-        diagonal += str(test[row, column])
-        row += 1
-        column += 1
-    diagonals.append(diagonal)
-
-print(diagonals)
+coins = [1, 2, 5]
+money = [0 for n in range(len(coins))]
+total = sum([coins[n] * money[n] for n in range(len(money))])
+target = 5
+print(money)
+count = 0
+print(total)
+for i in range(len(coins)):
+    while money[i] < 3:
+        money[i] += 1
+        print(money)
+    else:
+        money[0:i+1] = [0 for x in money[0:i+1]]
