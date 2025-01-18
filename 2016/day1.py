@@ -1,7 +1,7 @@
 # URL: https://adventofcode.com/2016/day/1
 # Answer:   332
 
-path = "/home/oscar/projects/advent-of-code/2016/day1_input.txt"
+path = "C:\\Users\\oscar\\my_stuff\\advent-of-code\\2016\\day1_input.txt"
 
 with open(path, 'r') as puzzle_input:
     instructions = puzzle_input.read().split(", ")

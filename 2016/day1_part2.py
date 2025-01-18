@@ -1,9 +1,8 @@
 # URL: https://adventofcode.com/2016/day/1#part2
-# Answer:   332
+# Answer:   166
 
-path = "/home/oscar/projects/advent-of-code/2016/day1_input.txt"
+path = "C:\\Users\\oscar\\my_stuff\\advent-of-code\\2016\\day1_input.txt"
 positions = []
-
 with open(path, 'r') as puzzle_input:
     instructions = puzzle_input.read().split(", ")
 
@@ -33,13 +32,38 @@ def calculate_distance(instructions):
         
         x += dx * steps
         y += dy * steps
-        new_position = (x, y)
-        positions.append(new_position)
-        if positions.count(new_position) == 2:
-            break
-    
-    print(new_position)
-    return abs(new_position[0]) + abs(new_position[1])
+        
+        current_x_coord = positions[-1][0]
+        current_y_coord = positions[-1][1]
+        
+        if x < 0:
+            for n in range(current_x_coord - 1, current_x_coord + x - 1, -1):
+                if (n, current_y_coord) in positions:
+                    return abs(n) + abs(current_y_coord)
+                else:
+                    positions.append((n, current_y_coord))
+        if x > 0:
+            for m in range(current_x_coord + 1, current_x_coord + x + 1):
+                if (m, current_y_coord) in positions:
+                    return abs(m) + abs(current_y_coord)
+                else:
+                    positions.append((m, current_y_coord))
+        if y < 0:
+            for o in range(current_y_coord - 1 , current_y_coord + y - 1, -1):
+                if (current_x_coord, o) in positions:
+                    return abs(current_x_coord) + abs(o)
+                else:
+                    positions.append((current_x_coord, o))
+        if y > 0:
+            for p in range(current_y_coord + 1 , current_y_coord + y + 1):
+                if (current_x_coord, p) in positions:
+                    print(current_x_coord, p)
+                    return abs(current_x_coord) + abs(p)
+                else:
+                    positions.append((current_x_coord, p))
+        x = 0
+        y = 0
+
 
 shortest_distance = calculate_distance(instructions)
 print(shortest_distance)
