@@ -1,13 +1,16 @@
-# URL:              https://adventofcode.com/2024/day/4
-# Correct answer:   ?
+# URL:		https://adventofcode.com/2024/day/4
+# Answer:	2571
 
-# 'Compass directions' used in this script:
-# 'nse' from north to southeast
-# 'wse' from west to southeast
-# 'nsw' from north to southwest
-# 'esw' from east to southwest
-
+import os
 import numpy as np
+puzzle_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2024\\day4_input.txt'
+example_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2024\\day4_example.txt'
+if os.name == 'posix':
+	puzzle_input = '/home/oscar/projects/advent-of-code/2024/day4_input.txt'
+	example_input = '/home/oscar/projects/advent-of-code/2024/day4_example.txt'
+
+key = "XMAS"
+total = 0
 
 def search_horizontally(grid, key) -> int:
     found = 0
@@ -91,13 +94,8 @@ def search_esw(rows,columns):
     return found
 
 
-path = "/home/oscar/projects/advent-of-code/2024/day4_input.txt"
-key = "XMAS"
-total = 0
-
-with open(path, "r") as data:
-    lines = data.read().splitlines()
-
+with open(puzzle_input, 'r') as data:
+	lines = data.readlines()
 grid = np.array([list(line) for line in lines])
 
 total += search_horizontally(grid, key)

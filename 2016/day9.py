@@ -1,14 +1,19 @@
-# URL: https://adventofcode.com/2016/day/9
-# Answer:   123
+# URL:		https://adventofcode.com/2016/day/9
+# Answer:	115118
 
+import os
 import re
+puzzle_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2016\\day9_input.txt'
+example_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2016\\day9_example.txt'
+if os.name == 'posix':
+	puzzle_input = '/home/oscar/projects/advent-of-code/2016/day9_input.txt'
+	example_input = '/home/oscar/projects/advent-of-code/2016/day9_example.txt'
 
-path = "C:\\Users\\oscar\\my_stuff\\advent-of-code\\2016\\day9_input.txt"
 pattern = r'[A-Z]|\(\d+x\d+\)'
 marker_pattern = r'(\d+)x(\d+)'
 
-with open(path, 'r') as puzzle_input:
-    data = puzzle_input.read()
+with open(puzzle_input, 'r') as puzzle:
+	data = puzzle.read()
 
 decompressed_string = ""
 parts = re.findall(pattern, data)

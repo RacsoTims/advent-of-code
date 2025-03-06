@@ -1,13 +1,18 @@
-# URL: https://adventofcode.com/2016/day/6#part2
-# Answer:   jucfoary
+# URL:		https://adventofcode.com/2016/day/6#part2
+# Answer:	jucfoary
 
+import os
 import numpy as np
+puzzle_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2016\\day6_input.txt'
+example_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2016\\day6_example.txt'
+if os.name == 'posix':
+	puzzle_input = '/home/oscar/projects/advent-of-code/2016/day6_input.txt'
+	example_input = '/home/oscar/projects/advent-of-code/2016/day6_example.txt'
 
-path = "C:\\Users\\oscar\\my_stuff\\advent-of-code\\2016\\day6_input.txt"
 corrected_message = ""
 
-with open(path, "r") as puzzle_input:
-    list_of_lines = [x.removesuffix("\n") for x in puzzle_input.readlines()]
+with open(puzzle_input, 'r') as data:
+	list_of_lines = [x.removesuffix("\n") for x in data.readlines()]
 
 grid = np.array([list(line) for line in list_of_lines])
 

@@ -1,26 +1,26 @@
-# URL:	https://adventofcode.com/2024/day/5
+# URL:		https://adventofcode.com/2024/day/5
 # Answer:	0
 
 import os
 import re
-
-path = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2024\\day5_input.txt'
+puzzle_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2024\\day5_input.txt'
+example_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2024\\day5_example.txt'
 if os.name == 'posix':
-	path = '/home/oscar/projects/advent-of-code/2024/day5_input.txt'
+	puzzle_input = '/home/oscar/projects/advent-of-code/2024/day5_input.txt'
+	example_input = '/home/oscar/projects/advent-of-code/2024/day5_example.txt'
 
 pattern = r'(\d+)\|(\d+)'
 count = 0
 sum = 0
-# pattern_pages = r'^\d+[,\d+]*$'
 
-with open(path, "r") as puzzle_input:
-    ordering_rules = []
-    pages_to_produce = []
-    for line in puzzle_input.readlines():
-        if "|" in line:
-            ordering_rules.append(re.findall(pattern, line)[0])
-        elif "," in line:
-            pages_to_produce.append(line.removesuffix("\n").split(","))
+with open(puzzle_input, 'r') as data:
+	ordering_rules = []
+	pages_to_produce = []
+	for line in data.readlines():
+		if "|" in line:
+			ordering_rules.append(re.findall(pattern, line)[0])
+		elif "," in line:
+			pages_to_produce.append(line.removesuffix("\n").split(","))
 
 for pages in pages_to_produce[3:]:
     correct_order = True
@@ -35,8 +35,3 @@ for pages in pages_to_produce[3:]:
     if not correct_order:
         sum += int(pages[(len(pages)//2)])
 print(sum)
-#                 correct_order = False
-#                 break
-#     if correct_order:
-#         sum += int(pages[(len(pages)//2)])
-# print(sum)

@@ -1,32 +1,37 @@
-# URL:      https://adventofcode.com/2021/day/4
-# Answer:   72770
+# URL:		https://adventofcode.com/2021/day/4
+# Answer:	72770
 
+import os
 import numpy as np
+puzzle_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2021\\day4_input.txt'
+example_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2021\\day4_example.txt'
+if os.name == 'posix':
+	puzzle_input = '/home/oscar/projects/advent-of-code/2021/day4_input.txt'
+	example_input = '/home/oscar/projects/advent-of-code/2021/day4_example.txt'
 
-path = "/home/oscar/projects/advent-of-code/2021/day4_input.txt"
 draws = []
 cards = []
 results = {}
 
-with open(path, 'r') as puzzle_input:
-    i = 0
-    for line in [(x.removeprefix(" ")).removesuffix("\n") for x in puzzle_input.readlines()]:
-        if "," in line:
-            draws = list(map(int, line.split(",")))
-        elif line == "":
-            i += 1
-            continue
-        else:
-            if i % 6 == 2:
-                card = []
-                row = row = line.replace("  ", " ").split(" ")
-                card.append(row)
-            else:
-                row = line.replace("  ", " ").split(" ")
-                card.append(row)
-            if len(card) == 5:
-                cards.append(np.array(card, dtype=int))
-        i += 1
+with open(puzzle_input, 'r') as data:
+	i = 0
+	for line in [(x.removeprefix(" ")).removesuffix("\n") for x in data.readlines()]:
+		if "," in line:
+			draws = list(map(int, line.split(",")))
+		elif line == "":
+			i += 1
+			continue
+		else:
+			if i % 6 == 2:
+				card = []
+				row = row = line.replace("  ", " ").split(" ")
+				card.append(row)
+			else:
+				row = line.replace("  ", " ").split(" ")
+				card.append(row)
+			if len(card) == 5:
+				cards.append(np.array(card, dtype=int))
+		i += 1
 
 for bingo_card in cards:
     for j in range(len(draws)):

@@ -1,5 +1,12 @@
-# URL:              
-# Correct answer:   
+# URL:		https://adventofcode.com/2024/day/4#part2
+# Answer:	1992
+
+import os
+puzzle_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2024\\day4_input.txt'
+example_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2024\\day4_example.txt'
+if os.name == 'posix':
+	puzzle_input = '/home/oscar/projects/advent-of-code/2024/day4_input.txt'
+	example_input = '/home/oscar/projects/advent-of-code/2024/day4_example.txt'
 
 def search_pattern(grid):
     found = 0
@@ -16,9 +23,6 @@ def search_pattern(grid):
     return found
 
 
-path = "/home/oscar/projects/advent-of-code/2024/day4_input.txt"
-
-with open(path, "r") as data:
-    grid = [list(x) for x in data.read().splitlines()]
-
+with open(puzzle_input, 'r') as data:
+	grid = [list(x) for x in data.readlines()]
 print(search_pattern(grid))

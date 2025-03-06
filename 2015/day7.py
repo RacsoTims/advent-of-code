@@ -1,9 +1,15 @@
-# URL:      https://adventofcode.com/2015/day/7
-# Answer:   377891
+# URL:		https://adventofcode.com/2015/day/7
+# Answer:	46065
 
-import re, numpy as np
+import os
+import numpy as np
+import re
+puzzle_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2015\\day7_input.txt'
+example_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2015\\day7_example.txt'
+if os.name == 'posix':
+	puzzle_input = '/home/oscar/projects/advent-of-code/2015/day7_input.txt'
+	example_input = '/home/oscar/projects/advent-of-code/2015/day7_example.txt'
 
-path = "C:\\Users\\oscar\\my_stuff\\advent-of-code\\2015\\day7_input.txt"
 bits = 16
 wires = {}
 
@@ -69,28 +75,28 @@ def right_shift(groups):
 
 def execute_instruction(instruction):
     if "NOT" in instruction:
-        result = re.search("NOT\s([a-z]+)\s->\s([a-z]+)", instruction).groups()
+        result = re.search(r"NOT\s([a-z]+)\s->\s([a-z]+)", instruction).groups()
         complement(result)
     elif "AND" in instruction:
-        result = re.search("([a-z]+)\sAND\s([a-z]+)\s->\s([a-z]+)", instruction).groups()
+        result = re.search(r"([a-z]+)\sAND\s([a-z]+)\s->\s([a-z]+)", instruction).groups()
         conjunction(result)
     elif "OR" in instruction:
-        result = re.search("([a-z]+)\sOR\s([a-z]+)\s->\s([a-z]+)", instruction).groups()
+        result = re.search(r"([a-z]+)\sOR\s([a-z]+)\s->\s([a-z]+)", instruction).groups()
         disjunction(result)
     elif "LSHIFT" in instruction:
-        result = re.search("([a-z]+)\sLSHIFT\s(\d+)\s->\s([a-z]+)", instruction).groups()
+        result = re.search(r"([a-z]+)\sLSHIFT\s(\d+)\s->\s([a-z]+)", instruction).groups()
         left_shift(result)
     elif "RSHIFT" in instruction:
-        result = re.search("([a-z]+)\sRSHIFT\s(\d+)\s->\s([a-z]+)", instruction).groups()
+        result = re.search(r"([a-z]+)\sRSHIFT\s(\d+)\s->\s([a-z]+)", instruction).groups()
         right_shift(result)
     else:
-        result = re.search("(\d+)\s->\s([a-z]+)", instruction).groups()
+        result = re.search(r"(\d+)\s->\s([a-z]+)", instruction).groups()
         assign_value_directly(result)
 
 
-with open(path, "r") as puzzle_input:
-    for instruction in puzzle_input.readlines():
-        execute_instruction(instruction)
+with open(puzzle_input, 'r') as data:
+	for instruction in data.readlines():
+		execute_instruction(instruction)
 print(wires)
 print(wires['a'])
 

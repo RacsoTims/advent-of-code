@@ -1,5 +1,14 @@
-# URL:              https://adventofcode.com/2024/day/2#part2
-# Correct answer:   601
+# URL:		https://adventofcode.com/2024/day/2#part2
+# Answer:	601
+
+import os
+puzzle_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2024\\day2_input.txt'
+example_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2024\\day2_example.txt'
+if os.name == 'posix':
+	puzzle_input = '/home/oscar/projects/advent-of-code/2024/day2_input.txt'
+	example_input = '/home/oscar/projects/advent-of-code/2024/day2_example.txt'
+
+count = 0
 
 def check_safety(report) -> bool:
     safe = True
@@ -21,15 +30,11 @@ def check_safety_with_dampener(report):
     return safe_with_dampener
 
 
-with open("C:\\Users\\oscar\\my_stuff\\advent-of-code\\2024\\day2_input.txt", "r") as data:
-    lines = (data.read()).splitlines()
+with open(puzzle_input, 'r') as data:
+	lines = data.readlines()
 
-count = 0
 for line in lines:
     report = list(map(int, line.split()))
     if check_safety(report) or check_safety_with_dampener(report):
         count += 1
 print(count)
-
-# Comments
-# wat als 'report' een lege lijst is?

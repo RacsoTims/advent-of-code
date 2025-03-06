@@ -1,14 +1,19 @@
-# URL:      https://adventofcode.com/2015/day/6
-# Answer:   377891
+# URL:		https://adventofcode.com/2015/day/6
+# Answer:	377891
 
+import os
 import numpy as np
 import re
+puzzle_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2015\\day6_input.txt'
+example_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2015\\day6_example.txt'
+if os.name == 'posix':
+	puzzle_input = '/home/oscar/projects/advent-of-code/2015/day6_input.txt'
+	example_input = '/home/oscar/projects/advent-of-code/2015/day6_example.txt'
 
-path = "C:\\Users\\oscar\\my_stuff\\advent-of-code\\2015\\day6_input.txt"
 grid = np.zeros((1000,1000))
 
-with open(path, "r") as puzzle_input:
-    raw = [x.removesuffix("\n") for x in puzzle_input.readlines()]
+with open(puzzle_input, 'r') as data:
+	raw = [x.removesuffix("\n") for x in data.readlines()]
 
 for instruction in raw:
     action = re.split("[0-9]", instruction, 1)[0].removesuffix(" ")

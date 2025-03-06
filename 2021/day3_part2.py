@@ -1,9 +1,13 @@
-# URL:      https://adventofcode.com/2021/day/3#part2
-# Answer:   2967914
+# URL:		https://adventofcode.com/2021/day/3#part2
+# Answer:	7041258
 
+import os
 import numpy as np
-
-path = "/home/oscar/projects/advent-of-code/2021/day3_input.txt"
+puzzle_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2021\\day3_input.txt'
+example_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2021\\day3_example.txt'
+if os.name == 'posix':
+	puzzle_input = '/home/oscar/projects/advent-of-code/2021/day3_input.txt'
+	example_input = '/home/oscar/projects/advent-of-code/2021/day3_example.txt'
 
 def binary_to_decimal(string):
     return sum([(2**(len(string)-i-1) * int(string[i])) for i in range(len(string))])
@@ -37,8 +41,8 @@ def filter_for_CO2_rating(report):
         return filtered_report
 
 
-with open(path, 'r') as puzzle_input:
-    report = np.array([list(line.removesuffix("\n")) for line in puzzle_input.readlines()])
+with open(puzzle_input, 'r') as data:
+	report = np.array([list(line.removesuffix("\n")) for line in data.readlines()])
 
 bin_oxygen = "".join(filter_for_oxygen_rating(report).flatten())
 bin_CO2 = "".join(filter_for_CO2_rating(report).flatten())

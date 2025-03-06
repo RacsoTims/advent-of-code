@@ -1,7 +1,12 @@
-# URL:	https://adventofcode.com/2023/day/15
+# URL:		https://adventofcode.com/2023/day/15
 # Answer:	0
 
 import os
-path = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2023\\day15_input.txt'
+puzzle_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2023\\day15_input.txt'
+example_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2023\\day15_example.txt'
 if os.name == 'posix':
-	path = '/home/oscar/projects/advent-of-code/2023/day15_input.txt'
+	puzzle_input = '/home/oscar/projects/advent-of-code/2023/day15_input.txt'
+	example_input = '/home/oscar/projects/advent-of-code/2023/day15_example.txt'
+
+with open(example_input, 'r') as data:
+	pass

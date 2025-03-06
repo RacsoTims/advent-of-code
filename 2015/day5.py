@@ -1,10 +1,16 @@
-# URL:      https://adventofcode.com/2015/day/5
-# Answer:   238
+# URL:		https://adventofcode.com/2015/day/5
+# Answer:	238
 
-path = "C:\\Users\\oscar\\my_stuff\\advent-of-code\\2015\\day5_input.txt"
+import os
+puzzle_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2015\\day5_input.txt'
+example_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2015\\day5_example.txt'
+if os.name == 'posix':
+	puzzle_input = '/home/oscar/projects/advent-of-code/2015/day5_input.txt'
+	example_input = '/home/oscar/projects/advent-of-code/2015/day5_example.txt'
+
 vowels = ["a", "e", "i", "o", "u"]
 invalid_strings = ["ab", "cd", "pq", "xy"]
-count_nice_strings = 0
+nice_strings = 0
 
 def count_vowels(test_str) -> bool:
     count = 0
@@ -45,9 +51,9 @@ def check_str(test_str) -> bool:
     return nice
 
 
-with open(path, "r") as puzzle_input:
-    strings_to_test = [string.removesuffix("\n") for string in puzzle_input.readlines()]
-    for test_string in strings_to_test:
-        if check_str(test_string):
-            count_nice_strings += 1
-print(count_nice_strings)
+with open(puzzle_input, 'r') as data:
+	strings_to_test = [x.removesuffix("\n") for x in data.readlines()]
+	for test_string in strings_to_test:
+		if check_str(test_string):
+			nice_strings += 1
+print(nice_strings)

@@ -1,10 +1,17 @@
-# URL:      https://adventofcode.com/2015/day/2#part2
-# Answer:   3737498
+# URL:		https://adventofcode.com/2015/day/2#part2
+# Answer:	3737498
+
+import os
+puzzle_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2015\\day2_input.txt'
+example_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2015\\day2_example.txt'
+if os.name == 'posix':
+	puzzle_input = '/home/oscar/projects/advent-of-code/2015/day2_input.txt'
+	example_input = '/home/oscar/projects/advent-of-code/2015/day2_example.txt'
 
 total = 0
 
-with open("C:\\Users\\oscar\\my_stuff\\advent-of-code\\2015\\day2_input.txt", "r") as data:
-    boxes = [dimensions_str.removesuffix("\n").split("x") for dimensions_str in data.readlines()]
+with open(puzzle_input, 'r') as data:
+	boxes = [n.removesuffix("\n").split("x") for n in data.readlines()]
 
 for box in boxes:
     dimensions = [int(x) for x in box]

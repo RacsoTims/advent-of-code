@@ -1,8 +1,14 @@
-# URL: https://adventofcode.com/2016/day/8
-# Answer:   123
+# URL:		https://adventofcode.com/2016/day/8
+# Answer:	123
 
+import os
 import numpy as np
 import re
+puzzle_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2016\\day8_input.txt'
+example_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2016\\day8_example.txt'
+if os.name == 'posix':
+	puzzle_input = '/home/oscar/projects/advent-of-code/2016/day8_input.txt'
+	example_input = '/home/oscar/projects/advent-of-code/2016/day8_example.txt'
 
 def create_screen(pixels_tall, pixels_wide):
     return np.zeros((pixels_tall, pixels_wide),dtype=int)
@@ -42,18 +48,15 @@ def rotate_column(column, shift, screen):
     return screen
 
 
-path = "C:\\Users\\oscar\\my_stuff\\advent-of-code\\2016\\day8_input.txt"
 pixels_tall = 6
 pixels_wide = 50
 screen = create_screen(pixels_tall, pixels_wide)
-# print(screen)
 
-with open(path, "r") as puzzle_input:
-    instructions = [x.removesuffix("\n") for x in puzzle_input.readlines()]
-# print(instructions)
+with open(puzzle_input, 'r') as data:
+	instructions = [x.removesuffix("\n") for x in data.readlines()]
+
 for instruction in instructions:
     screen = parse_instruction(instruction, screen)
-    # print(screen)
-print(screen)
+# print(screen)
 pixels_lit = int(np.sum(screen))
 print(pixels_lit)

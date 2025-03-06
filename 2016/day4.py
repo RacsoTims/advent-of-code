@@ -1,9 +1,14 @@
-# URL: https://adventofcode.com/2016/day/4
-# Answer:   278221
+# URL:		https://adventofcode.com/2016/day/4
+# Answer:	278221
 
+import os
 import re
+puzzle_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2016\\day4_input.txt'
+example_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2016\\day4_example.txt'
+if os.name == 'posix':
+	puzzle_input = '/home/oscar/projects/advent-of-code/2016/day4_input.txt'
+	example_input = '/home/oscar/projects/advent-of-code/2016/day4_example.txt'
 
-path = "C:\\Users\\oscar\\my_stuff\\advent-of-code\\2016\\day4_input.txt"
 sum_sector_IDs = 0
 length_checksum = 5
 real_rooms = []
@@ -25,14 +30,14 @@ def build_checksum(encrypted_name):
     return checksum
 
 
-with open(path, "r") as puzzle_input:
-    for line in puzzle_input.readlines():
-        parts = re.findall("\\D+\\-|\\d+|\\w+", line)
-        encrypted_name = parts[0].replace("-", "")
-        sector_ID = int(parts[1])
-        given_checksum = parts[-1]
-        if build_checksum(encrypted_name) == given_checksum:
-            real_rooms.append(sector_ID)
-            sum_sector_IDs += sector_ID
+with open(puzzle_input, 'r') as data:
+	for line in data.readlines():
+		parts = re.findall("\\D+\\-|\\d+|\\w+", line)
+		encrypted_name = parts[0].replace("-", "")
+		sector_ID = int(parts[1])
+		given_checksum = parts[-1]
+		if build_checksum(encrypted_name) == given_checksum:
+			real_rooms.append(sector_ID)
+			sum_sector_IDs += sector_ID
 print(len(real_rooms))
 print(f"Sum of sector IDs = {sum_sector_IDs}")

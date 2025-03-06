@@ -1,9 +1,14 @@
-# URL: https://adventofcode.com/2016/day/2#part2
-# Answer:   A7AC3
+# URL:		https://adventofcode.com/2016/day/2#part2
+# Answer:	A7AC3
 
+import os
 import numpy as np
+puzzle_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2016\\day2_input.txt'
+example_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2016\\day2_example.txt'
+if os.name == 'posix':
+	puzzle_input = '/home/oscar/projects/advent-of-code/2016/day2_input.txt'
+	example_input = '/home/oscar/projects/advent-of-code/2016/day2_example.txt'
 
-path = "C:\\Users\\oscar\\my_stuff\\advent-of-code\\2016\\day2_input.txt"
 grid = np.array([["", "", "1", "", ""],
                 ["", "2", "3", "4", ""],
                 ["5", "6", "7", "8", "9"],
@@ -49,8 +54,8 @@ def right(column):
     return column
 
 
-with open(path, "r") as puzzle_input:
-    for line in puzzle_input.readlines():
+with open(puzzle_input, "r") as data:
+    for line in data.readlines():
         for step in line.removesuffix("\n"):
             row, column = execute_step(step, row, column)
             position = grid[row][column]
