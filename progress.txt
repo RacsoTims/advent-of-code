@@ -8,7 +8,7 @@ Year			Stars earned			Completion
 
 2017			0					0/50 (0%)
 
-2018			0					0/50 (0%)
+2018			6					6/50 (12%)
 
 2019			0					0/50 (0%)
 
@@ -22,4 +22,4 @@ Year			Stars earned			Completion
 
 2024			8					8/50 (16%)
 
-Total			58					58/500 (12%)
+Total			64					64/500 (13%)
