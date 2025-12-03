@@ -1,13 +1,13 @@
 # URL:		https://adventofcode.com/2016/day/5
 # Answer:	4543c154
 
-import os
 import hashlib
-puzzle_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2016\\day5_input.txt'
-example_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2016\\day5_example.txt'
+import os
+puzzle_input = '.\\day5_input.txt'
+example_input = '.\\day5_example.txt'
 if os.name == 'posix':
-	puzzle_input = '/home/oscar/projects/advent-of-code/2016/day5_input.txt'
-	example_input = '/home/oscar/projects/advent-of-code/2016/day5_example.txt'
+	puzzle_input = './day5_input.txt'
+	example_input = './day5_example.txt'
 
 leading_zeros = 5
 password = ""

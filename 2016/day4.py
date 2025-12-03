@@ -1,13 +1,13 @@
 # URL:		https://adventofcode.com/2016/day/4
 # Answer:	278221
 
-import os
 import re
-puzzle_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2016\\day4_input.txt'
-example_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2016\\day4_example.txt'
+import os
+puzzle_input = '.\\day4_input.txt'
+example_input = '.\\day4_example.txt'
 if os.name == 'posix':
-	puzzle_input = '/home/oscar/projects/advent-of-code/2016/day4_input.txt'
-	example_input = '/home/oscar/projects/advent-of-code/2016/day4_example.txt'
+	puzzle_input = './day4_input.txt'
+	example_input = './day4_example.txt'
 
 sum_sector_IDs = 0
 length_checksum = 5

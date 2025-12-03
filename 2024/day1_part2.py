@@ -2,11 +2,11 @@
 # Answer:	23981443
 
 import os
-puzzle_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2024\\day1_input.txt'
-example_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2024\\day1_example.txt'
+puzzle_input = '.\\day1_input.txt'
+example_input = '.\\day1_example.txt'
 if os.name == 'posix':
-	puzzle_input = '/home/oscar/projects/advent-of-code/2024/day1_input.txt'
-	example_input = '/home/oscar/projects/advent-of-code/2024/day1_example.txt'
+	puzzle_input = './day1_input.txt'
+	example_input = './day1_example.txt'
 
 similarity_score = 0
 

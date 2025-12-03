@@ -1,20 +1,21 @@
 # Create a file that shows my Advent of Code progress
 
-$rootFolder = "C:\Users\oscar\my_stuff\advent-of-code"
-$targetFile = "C:\Users\oscar\my_stuff\advent-of-code\progress.txt"
+$targetFile = ".\progress.txt"
 
-$startString = "ADVENT OF CODE PROGRESS OVERVIEW`n`nYear`t`t`tStars earned`t`t`tCompletion"
+$header = "ADVENT OF CODE PROGRESS OVERVIEW`n`nYear`t`t`tStars earned`t`t`tCompletion"
 $testString = "Answer:`t0"
 
-$maximumScore = 50
-$adventOfCodeAge = 10
+$startingYear = 2015
+$adventOfCodeAge = (Get-Date -Format "yyyy") - $startingYear + 1
 $scores = @()
 
-Set-Content $targetFile -Value $startString
+Set-Content $targetFile -Value $header
 
-foreach ($year in Get-ChildItem $rootFolder -Directory) {
+foreach ($year in Get-ChildItem -Directory) {
+    $files = Get-ChildItem "$year\day*.py"
+    $maximumScore = ($files | Measure-Object).Count
     $score = 0
-    foreach ($day in Get-ChildItem "$year\day*.py") {
+    foreach ($day in $files) {
         $content = Get-Content $day -Raw
         if ($content -and (-not ($content.Contains($testString)))) {
             $score += 1

@@ -1,14 +1,15 @@
 # URL:		https://adventofcode.com/2015/day/4#part2
 # Answer:	9962624
 
-import os
 import hashlib
-puzzle_input = "yzbqklnj"
-example_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2015\\day4_example.txt'
+import os
+puzzle_input = '.\\day4_input.txt'
+example_input = '.\\day4_example.txt'
 if os.name == 'posix':
-	puzzle_input = '/home/oscar/projects/advent-of-code/2015/day4_input.txt'
-	example_input = '/home/oscar/projects/advent-of-code/2015/day4_example.txt'
+	puzzle_input = './day4_input.txt'
+	example_input = './day4_example.txt'
 
+puzzle_input = "yzbqklnj"
 leading_zeroes = 6
 
 def test_key(key) -> bool:

@@ -2,11 +2,11 @@
 # Answer:	2360
 
 import os
-puzzle_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2015\\day3_input.txt'
-example_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2015\\day3_example.txt'
+puzzle_input = '.\\day3_input.txt'
+example_input = '.\\day3_example.txt'
 if os.name == 'posix':
-	puzzle_input = '/home/oscar/projects/advent-of-code/2015/day3_input.txt'
-	example_input = '/home/oscar/projects/advent-of-code/2015/day3_example.txt'
+	puzzle_input = './day3_input.txt'
+	example_input = './day3_example.txt'
 
 locations_visited = []
 position_santa= [0,0]       # Santa's position on the grid given as coordinates (X, Y)

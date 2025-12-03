@@ -2,11 +2,11 @@
 # Answer:	332
 
 import os
-puzzle_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2016\\day1_input.txt'
-example_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2016\\day1_example.txt'
+puzzle_input = '.\\day1_input.txt'
+example_input = '.\\day1_example.txt'
 if os.name == 'posix':
-	puzzle_input = '/home/oscar/projects/advent-of-code/2016/day1_input.txt'
-	example_input = '/home/oscar/projects/advent-of-code/2016/day1_example.txt'
+	puzzle_input = './day1_input.txt'
+	example_input = './day1_example.txt'
 
 def calculate_distance(instructions):
     x, y = 0, 0     # Santa's position represented as X and Y coordinates

@@ -2,11 +2,11 @@
 # Answer:	935
 
 import os
-puzzle_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2020\\day5_input.txt'
-example_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2020\\day5_example.txt'
+puzzle_input = '.\\day5_input.txt'
+example_input = '.\\day5_example.txt'
 if os.name == 'posix':
-	puzzle_input = '/home/oscar/projects/advent-of-code/2020/day5_input.txt'
-	example_input = '/home/oscar/projects/advent-of-code/2020/day5_example.txt'
+	puzzle_input = './day5_input.txt'
+	example_input = './day5_example.txt'
 
 highest_id = 0
 row_letters = 7

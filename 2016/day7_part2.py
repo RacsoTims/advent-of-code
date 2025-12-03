@@ -1,13 +1,13 @@
 # URL:		https://adventofcode.com/2016/day/7#part2
 # Answer:	258
 
-import os
 import re
-puzzle_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2016\\day7_input.txt'
-example_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2016\\day7_example.txt'
+import os
+puzzle_input = '.\\day7_input.txt'
+example_input = '.\\day7_example.txt'
 if os.name == 'posix':
-	puzzle_input = '/home/oscar/projects/advent-of-code/2016/day7_input.txt'
-	example_input = '/home/oscar/projects/advent-of-code/2016/day7_example.txt'
+	puzzle_input = './day7_input.txt'
+	example_input = './day7_example.txt'
 
 ssl_supported = 0
 groups_of_four_pattern = r"(?=(\w{3}))"

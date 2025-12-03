@@ -1,13 +1,13 @@
 # URL:		https://adventofcode.com/2023/day/2
 # Answer:	3059
 
-import os
 import re
-puzzle_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2023\\day2_input.txt'
-example_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2023\\day2_example.txt'
+import os
+puzzle_input = '.\\day2_input.txt'
+example_input = '.\\day2_example.txt'
 if os.name == 'posix':
-	puzzle_input = '/home/oscar/projects/advent-of-code/2023/day2_input.txt'
-	example_input = '/home/oscar/projects/advent-of-code/2023/day2_example.txt'
+	puzzle_input = './day2_input.txt'
+	example_input = './day2_example.txt'
 
 max_red = 12
 max_green = 13

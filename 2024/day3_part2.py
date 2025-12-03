@@ -1,13 +1,13 @@
 # URL:		https://adventofcode.com/2024/day/3#part2
 # Answer:	82733683
 
-import os
 import re
-puzzle_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2024\\day3_input.txt'
-example_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2024\\day3_example.txt'
+import os
+puzzle_input = '.\\day3_input.txt'
+example_input = '.\\day3_example.txt'
 if os.name == 'posix':
-	puzzle_input = '/home/oscar/projects/advent-of-code/2024/day3_input.txt'
-	example_input = '/home/oscar/projects/advent-of-code/2024/day3_example.txt'
+	puzzle_input = './day3_input.txt'
+	example_input = './day3_example.txt'
 
 pattern = r'mul\((\d{1,3}),(\d{1,3})\)'
 pattern_extended = r'(?<=\))'

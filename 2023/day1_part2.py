@@ -2,11 +2,11 @@
 # Answer:	57345
 
 import os
-puzzle_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2023\\day1_input.txt'
-example_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2023\\day1_example.txt'
+puzzle_input = '.\\day1_input.txt'
+example_input = '.\\day1_example.txt'
 if os.name == 'posix':
-	puzzle_input = '/home/oscar/projects/advent-of-code/2023/day1_input.txt'
-	example_input = '/home/oscar/projects/advent-of-code/2023/day1_example.txt'
+	puzzle_input = './day1_input.txt'
+	example_input = './day1_example.txt'
 
 digits_map = {"one": "1", "two": "2", "three": "3",
 		"four": "4", "five": "5", "six": "6",

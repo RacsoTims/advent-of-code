@@ -2,11 +2,11 @@
 # Answer:	2515
 
 import os
-puzzle_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2022\\day3_input.txt'
-example_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2022\\day3_example.txt'
+puzzle_input = '.\\day3_input.txt'
+example_input = '.\\day3_example.txt'
 if os.name == 'posix':
-	puzzle_input = '/home/oscar/projects/advent-of-code/2022/day3_input.txt'
-	example_input = '/home/oscar/projects/advent-of-code/2022/day3_example.txt'
+	puzzle_input = './day3_input.txt'
+	example_input = './day3_example.txt'
 
 priority_lowercase = 1
 priority_uppercase = 27

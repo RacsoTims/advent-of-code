@@ -1,13 +1,13 @@
 # URL:		https://adventofcode.com/2020/day/3#part2
 # Answer:	2106818610
 
-import os
 import numpy as np
-puzzle_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2020\\day3_input.txt'
-example_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2020\\day3_example.txt'
+import os
+puzzle_input = '.\\day3_input.txt'
+example_input = '.\\day3_example.txt'
 if os.name == 'posix':
-	puzzle_input = '/home/oscar/projects/advent-of-code/2020/day3_input.txt'
-	example_input = '/home/oscar/projects/advent-of-code/2020/day3_example.txt'
+	puzzle_input = './day3_input.txt'
+	example_input = './day3_example.txt'
 
 slopes = [(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)]
 tree_sign = "#"

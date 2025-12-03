@@ -2,11 +2,11 @@
 # Answer:	1992
 
 import os
-puzzle_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2024\\day4_input.txt'
-example_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2024\\day4_example.txt'
+puzzle_input = '.\\day4_input.txt'
+example_input = '.\\day4_example.txt'
 if os.name == 'posix':
-	puzzle_input = '/home/oscar/projects/advent-of-code/2024/day4_input.txt'
-	example_input = '/home/oscar/projects/advent-of-code/2024/day4_example.txt'
+	puzzle_input = './day4_input.txt'
+	example_input = './day4_example.txt'
 
 def search_pattern(grid):
     found = 0

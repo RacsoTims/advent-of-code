@@ -1,13 +1,13 @@
 # URL:		https://adventofcode.com/2022/day/5#part2
 # Answer:	NLCDCLVMQ
 
-import os
 import re
-puzzle_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2022\\day5_input.txt'
-example_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2022\\day5_example.txt'
+import os
+puzzle_input = '.\\day5_input.txt'
+example_input = '.\\day5_example.txt'
 if os.name == 'posix':
-	puzzle_input = '/home/oscar/projects/advent-of-code/2022/day5_input.txt'
-	example_input = '/home/oscar/projects/advent-of-code/2022/day5_example.txt'
+	puzzle_input = './day5_input.txt'
+	example_input = './day5_example.txt'
 
 message = ""
 stacks = {'1': ['R', 'H', 'M', 'P', 'Z'],

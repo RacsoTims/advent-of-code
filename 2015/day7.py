@@ -1,14 +1,14 @@
 # URL:		https://adventofcode.com/2015/day/7
 # Answer:	46065
 
-import os
 import numpy as np
 import re
-puzzle_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2015\\day7_input.txt'
-example_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2015\\day7_example.txt'
+import os
+puzzle_input = '.\\day7_input.txt'
+example_input = '.\\day7_example.txt'
 if os.name == 'posix':
-	puzzle_input = '/home/oscar/projects/advent-of-code/2015/day7_input.txt'
-	example_input = '/home/oscar/projects/advent-of-code/2015/day7_example.txt'
+	puzzle_input = './day7_input.txt'
+	example_input = './day7_example.txt'
 
 bits = 16
 wires = {}

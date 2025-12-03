@@ -1,14 +1,14 @@
 # URL:		https://adventofcode.com/2015/day/6
 # Answer:	377891
 
-import os
 import numpy as np
 import re
-puzzle_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2015\\day6_input.txt'
-example_input = 'C:\\Users\\oscar\\my_stuff\\advent-of-code\\2015\\day6_example.txt'
+import os
+puzzle_input = '.\\day6_input.txt'
+example_input = '.\\day6_example.txt'
 if os.name == 'posix':
-	puzzle_input = '/home/oscar/projects/advent-of-code/2015/day6_input.txt'
-	example_input = '/home/oscar/projects/advent-of-code/2015/day6_example.txt'
+	puzzle_input = './day6_input.txt'
+	example_input = './day6_example.txt'
 
 grid = np.zeros((1000,1000))
 
