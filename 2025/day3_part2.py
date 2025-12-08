@@ -1,5 +1,5 @@
 # URL:		https://adventofcode.com/2025/day/3#part2
-# Answer:	0
+# Answer:	168794698570517
 
 import os
 puzzle_input = '.\\day3_input.txt'
